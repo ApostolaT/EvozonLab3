@@ -24,7 +24,7 @@ class RandomNumberCollection implements Iterator
         return $this->randomNumbers[$this->position];
     }
 
-    public function next()
+    public function next(): void
     {
         ++$this->position;
     }
@@ -34,12 +34,12 @@ class RandomNumberCollection implements Iterator
         return $this->position;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->randomNumbers[$this->position]);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->position = 0;
     }
